@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Crud_app',
     'widget_tweaks',
-    'rest_framework',
 ]
 
 MIDDLEWARE = [

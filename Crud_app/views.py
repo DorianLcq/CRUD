@@ -2,8 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import PostForm
 from .models import Post
 from django.views.generic import ListView, DetailView
-from rest_framework import viewsets        
-from .serializers import PostSerializer      
+     
 
 #home view for posts. Posts are displayed in a list
 class IndexView(ListView):
@@ -43,7 +42,3 @@ def delete(request, pk, template_name='Crud_app/confirm_delete.html'):
         post.delete()
         return redirect('index')
     return render(request, template_name, {'object':post})
-
-class PostView(viewsets.ModelViewSet):       
-  serializer_class = PostSerializer          
-  queryset = Post.objects.all()              
